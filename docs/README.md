@@ -1,14 +1,13 @@
-# Aurora
-## Table of content
+# Table of content
 * [1 — Software architecture](#software-architecture)
     * [1.1 — Functional requirements](#functional-requirements)
     * [1.2 — Non-functional requirements](#non-functional-requirements)
     * [1.3 — Constraints](#constraints)
 
-## Software architecture
+# Software architecture
 
-### Functional requirements
-**Use cases**
+## Functional requirements
+### Use cases
 * User registration
 * User login
 * User accessing a dashboard
@@ -21,7 +20,7 @@
 
 ---
 
-**Importance VS Feasability**
+### Importance VS Feasability
 
 *Include or die*
 * User goal vocal profiles
@@ -42,7 +41,7 @@
 
 ---
 
-**Userflows**
+### Userflows
 
 *Registration*
 ![Registration Userflow](imgs/Registration.png)
@@ -56,16 +55,16 @@
 *Starting session*
 ![Starting session Userflow](imgs/Starting%20session.png)
 
-### Non-functional requirements
+## Non-functional requirements
 
-**Performance**
+### Performance
 
 * Response time
 * Throughput
 
 ---
 
-**Scalability**
+### Scalability
 
 * Vertical 
 * Horizontal 
@@ -73,7 +72,7 @@
 
 ---
 
-**Availability**
+### Availability
 
 * Uptime
 * Downtime
@@ -82,7 +81,7 @@
 
 ---
 
-**Fault tolerance**
+### Fault tolerance
 
 * Failure prevention
     * Spatial replication and redundancy
@@ -100,7 +99,7 @@
 
 ---
 
-**SLA, SLO, SLI**
+### SLA, SLO, SLI
 
 * Service-level-agreement
 * Service-level-objectives
@@ -108,15 +107,17 @@
 
 ---
 
-**Non-functional trade-off decisions**
+### Non-functional trade-off decisions
 
 * Increase availability by sacrificing scalability
 * Increase performance by sacrificing scalability
 * Trade some performance for higher security (if necessary get some more performance by trading some availability)
 
-### Constraints 
+---
 
-**Technical constraints**
+## Constraints 
+
+### Technical constraints
 
 *Workstation*
 * Dell T7910
@@ -144,13 +145,14 @@
 * HTML
 * CSS
 * JS
+* MySQL
 
 *Platform*
 * Web
 
 ---
 
-**Business constraints**
+### Business constraints
 
 *Time*
 * 6-Month
@@ -160,7 +162,7 @@
 
 ---
 
-**Regulatory constraints**
+### Regulatory constraints
 
 *GDPR and ethics*
 * Privacy
@@ -169,3 +171,21 @@
 * Security
 * Accountability
 * Retention
+
+---
+
+## API design
+### Public APIs
+- REST
+
+### Private APIs
+- gRPC
+
+### Partner APIs
+- gRPC
+
+### Encapsulation
+### Ease of use
+### Idempotency
+### API pagination
+### Asynchronous operations
