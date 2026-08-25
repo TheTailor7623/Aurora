@@ -17,7 +17,7 @@
 * User uploading a voice recording
 * User getting real-time feedback
 * User getting delayed feedback 
-* User wants to extract speech voice, speed, pitch and pause pattern features
+* Speech analysis and processing (volume, speed, pitch and pauses)
 
 ---
 
@@ -58,4 +58,114 @@
 
 ### Non-functional requirements
 
+**Performance**
+
+* Response time
+* Throughput
+
+---
+
+**Scalability**
+
+* Vertical 
+* Horizontal 
+* Team 
+
+---
+
+**Availability**
+
+* Uptime
+* Downtime
+* Mean time between failures (MTBF)
+* Mean time to recovery (MTTR)
+
+---
+
+**Fault tolerance**
+
+* Failure prevention
+    * Spatial replication and redundancy
+    * Time replication and redundancy
+* Failure detection and isolation
+    * Monitoring service
+* Recovery
+    * Automatic alerts
+    * Failover 
+    * Rollback
+    * Restart
+    * Auto-scaling
+    * Stop
+    * SOPs
+
+---
+
+**SLA, SLO, SLI**
+
+* Service-level-agreement
+* Service-level-objectives
+* Service-level-indicators
+
+---
+
+**Non-functional trade-off decisions**
+
+* Increase availability by sacrificing scalability
+* Increase performance by sacrificing scalability
+* Trade some performance for higher security (if necessary get some more performance by trading some availability)
+
 ### Constraints 
+
+**Technical constraints**
+
+*Workstation*
+* Dell T7910
+
+*CPU*
+* Intel Xeon E5-2640 v4
+
+*RAM*
+* 32Gb DDR4 ECC 24000Hz (4x8Gb)
+
+*HDD*
+* 3TB
+
+*SSD*
+* 128Gb
+
+*GPU*
+* NVIDIA GeForce GT 1030
+
+*Tech stack*
+* Java
+* Springboot
+* C++
+* Python
+* HTML
+* CSS
+* JS
+
+*Platform*
+* Web
+
+---
+
+**Business constraints**
+
+*Time*
+* 6-Month
+
+*Budget*
+* £0
+
+---
+
+**Regulatory constraints**
+
+*GDPR and ethics*
+* Privacy
+* Transparency
+* Consent
+* Security
+* Accountability
+* Retention
