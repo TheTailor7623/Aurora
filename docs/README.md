@@ -176,6 +176,12 @@
 ## Public
 ### REST
 #### Entities
+- User/
+- Vocal-profile/
+- Feedback/
+- Voice/
+
+
 #### URLs
 #### Resource representation
 #### HTTP methods for operations on resource
@@ -188,5 +194,6 @@
 ### gRPC
 
 # Software architecture diagram
+
 
 
