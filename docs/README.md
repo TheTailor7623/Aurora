@@ -176,6 +176,12 @@
 ## Public
 ### REST
 #### Entities
+* Users
+* Vocal-profiles
+* Feedback
+* Practice
+
+#### URLs
 * Users/
     * Users/register
     * Users/Login
@@ -184,24 +190,19 @@
     * Vocal-profiles/{profile-id}
 * Feedback/
     * Feedback/{feedback-id}
-* Voice/
-    * Voice/volume
-    * Voice/speed
-    * Voice/pitch
-    * Voice/pauses    
+* Practice/
+    * Practice/{vocal-profile-id}
+        * Practice/{vocal-profile-id}/volume
+        * Practice/{vocal-profile-id}/speed
+        * Practice/{vocal-profile-id}/pitch
+        * Practice/{vocal-profile-id}/pauses
 
-#### URLs
 #### Resource representation
 #### HTTP methods for operations on resource
-
-
-
 ### Websocket
 
 ## Private
 ### gRPC
 
 # Software architecture diagram
-
-
 
