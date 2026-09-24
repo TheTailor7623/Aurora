@@ -191,11 +191,18 @@
 * Feedback/
     * Feedback/{feedback-id}
 * Practice/
-    * Practice/{vocal-profile-id}
-        * Practice/{vocal-profile-id}/volume
-        * Practice/{vocal-profile-id}/speed
-        * Practice/{vocal-profile-id}/pitch
-        * Practice/{vocal-profile-id}/pauses
+    * Practice/{vocal-profile-id} 
+        * Practice/{vocal-profile-id}/real-time
+            * Practice/{vocal-profile-id}/real-time/volume
+            * Practice/{vocal-profile-id}/real-time/speed
+            * Practice/{vocal-profile-id}/real-time/pitch
+            * Practice/{vocal-profile-id}/real-time/pauses  
+        * Practice/{vocal-profile-id}/upload
+            * Practice/{vocal-profile-id}/upload/volume
+            * Practice/{vocal-profile-id}/upload/speed
+            * Practice/{vocal-profile-id}/upload/pitch
+            * Practice/{vocal-profile-id}/upload/pauses
+* Dashboard 
 
 #### Resource representation
 #### HTTP methods for operations on resource
