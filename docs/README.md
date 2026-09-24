@@ -176,11 +176,19 @@
 ## Public
 ### REST
 #### Entities
-- User/
-- Vocal-profile/
-- Feedback/
-- Voice/
-
+* Users/
+    * Users/register
+    * Users/Login
+    * Users/{user-id}
+* Vocal-profiles/
+    * Vocal-profiles/{profile-id}
+* Feedback/
+    * Feedback/{feedback-id}
+* Voice/
+    * Voice/volume
+    * Voice/speed
+    * Voice/pitch
+    * Voice/pauses    
 
 #### URLs
 #### Resource representation
