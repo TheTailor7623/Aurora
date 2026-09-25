@@ -16,9 +16,9 @@
 4. User creating a target vocal profile
 5. User starting a session
 6. User uploading a voice recording
-7. User getting real-time feedback
-8. User getting delayed feedback 
-9. User wants to extract speech voice, speed, pitch and pause pattern features
+8. User getting feedback (delayed and real-time)
+9. User extracting speech features — voice, speed, pitch and pause pattern features
+10. User establishing a their baseline
 
 ---
 
@@ -177,35 +177,63 @@
 ### REST
 #### Entities
 * Users
-* Vocal-profiles
 * Feedback
-* Practice
+* Vocal-profiles 
+* Sessions
+
 
 #### URLs
+* /
+    * /register/
+    * /login/
 * Users/
-    * Users/register
-    * Users/Login
     * Users/{user-id}
 * Vocal-profiles/
-    * Vocal-profiles/{profile-id}
+    * Vocal-profiles/current
+    * Vocal-profiles/target
+        * Vocal-profiles/target/{target-vocal-profile-id}
 * Feedback/
-    * Feedback/{feedback-id}
-* Practice/
-    * Practice/{vocal-profile-id} 
-        * Practice/{vocal-profile-id}/real-time
-            * Practice/{vocal-profile-id}/real-time/volume
-            * Practice/{vocal-profile-id}/real-time/speed
-            * Practice/{vocal-profile-id}/real-time/pitch
-            * Practice/{vocal-profile-id}/real-time/pauses  
-        * Practice/{vocal-profile-id}/upload
-            * Practice/{vocal-profile-id}/upload/volume
-            * Practice/{vocal-profile-id}/upload/speed
-            * Practice/{vocal-profile-id}/upload/pitch
-            * Practice/{vocal-profile-id}/upload/pauses
-* Dashboard 
+    * Users/{user-id}/Feedback
+    * Users/{user-id}/Feedback/{feedback-id}
+* Sessions/
+    * Sessions/{target-vocal-profile-id} 
+        * Sessions/{target-vocal-profile-id}/real-time
+            * Sessions/{target-vocal-profile-id}/real-time/volume
+            * Sessions/{target-vocal-profile-id}/real-time/speed
+            * Sessions/{target-vocal-profile-id}/real-time/pitch
+            * Sessions/{target-vocal-profile-id}/real-time/pauses  
+        * Sessions/{target-vocal-profile-id}/upload
+            * Sessions/{target-vocal-profile-id}/upload/volume
+            * Sessions/{target-vocal-profile-id}/upload/speed
+            * Sessions/{target-vocal-profile-id}/upload/pitch
+            * Sessions/{target-vocal-profile-id}/upload/pauses
 
 #### Resource representation
+
 #### HTTP methods for operations on resource
+POST /users/
+GET /users/{user-id}
+UPDATE /users/{user-id}
+DELETE /users/{user-id}
+
+POST /vocal-profiles/baseline-profiles
+POST /vocal-profiles/target-profiles
+GET /vocal-profiles/baseline-profiles
+GET /vocal-profiles/baseline-profiles/{baseline-profile-id}
+GET /vocal-profiles/target-profiles
+GET /vocal-profiles/target-profiles/{target-profile-id}
+UPDATE /vocal-profiles/target-profiles/{target-profile-id}
+DELETE /vocal-profiles/target-profiles/{target-profile-id}
+DELETE /vocal-profiles/baseline-profiles/{baseline-profile-id}
+
+POST /sessions/real-time
+POST /sessions/upload/
+GET /sessions/{session-id}
+
+POST /feedback/{user-id}/{session-id}
+GET /feedback/{user-id}
+GET /feedback/{user-id}/{session-id}
+
 ### Websocket
 
 ## Private
