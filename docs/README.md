@@ -404,7 +404,7 @@ GET /analytics/
     "pitchRange" : "",
     "pitchContours" : "",
     "speechRate" : "", 
-    "articulationRate" : "",
+    "narticulationRate" : "",
     "pauseDuration" : "",
     "pauseFrequency" : "",
     "vowelToConsonantRatio" : "",
@@ -453,6 +453,34 @@ GET /analytics/
 GET /analytics/{session-id}
 
 ### Websocket
+#### Decisions
+* wss://deencore.com/sessions/real-time
+* Authentication and authorisation done thorugh JWT sessions on webapp beforehand
+* Client browser has to send a Ping frame every 10 seconds and server has to respond within 5 seconds with a Pong frame or connection is severed by the server after 2nd attempt. 
+* We will not use STOM because it is a text-based protocol with unnecessary header overheads or WOMP because it adds unnecessary latency and complexity. 
+* Transportation protocol will be plain websocket
+* Serialisation protocol will be a unified binary protobuf schema
+* Due to limited bandwidth but good processing power we will use Opus audio codec
+* Interval sizing will be a balanced mid-range of 40-60ms
+* No WebM or Ogg container to keep overhead low
+* HTTP handshake-level auth 
+* Initialisation state to get stream between client browser and server up as well as server and C++ analysis backend
+* Ending state to get the stream closed and cleaned up
+* Include a sequence number to help the server or C++ backend detect dropped buffers
+* Dedicate CPU cores to decoding incoming audio chunks, returning data to webapp from server and main CPU cores to ingest incoming streams 
+
+#### Client to server
+* session-id
+* user credentials in webapp auth and session cookie
+* Sample rate, channel count, encoding format, sequence/timestamp data
+* If heartbeat is alive then pause otherwise the server can count it as a dropped connection and we can add an automatic timeout limit to avoid an accidental open session or some form of server attack that spins-up multiple sessions and leaves them running with no audio
+
+#### Server to client
+* Depends on the active session before starting it you toggle the specific aspects you are practicing (volume, speed, pitch, pauses) - this does not affect client to server because we want to capture all data but server to client we only need to display chosen features.
+* We need to return difference between current and target performance and display it visually on frontend
+* I am not sure
+* I am not sure
+* No exercise reccomendation only live in delayed feedback and I might not include them to keep research around feedback frequency and not introduce complexity by adding feedback type
 
 ## Private
 ### gRPC
