@@ -177,44 +177,263 @@
 ### REST
 #### Entities
 * Users
-* Feedback
+* Analytics
 * Vocal-profiles 
 * Sessions
 
 
-#### URLs
-* /
-    * /register/
-    * /login/
+#### URIs
 * Users/
-    * Users/{user-id}
+    * {user-id}
 * Vocal-profiles/
-    * Vocal-profiles/current
-    * Vocal-profiles/target
-        * Vocal-profiles/target/{target-vocal-profile-id}
-* Feedback/
-    * Users/{user-id}/Feedback
-    * Users/{user-id}/Feedback/{feedback-id}
+    * baseline
+    * target
+        * {target-vocal-profile-id}
+* Analytics/
+    * {Analytics-id}
 * Sessions/
-    * Sessions/{target-vocal-profile-id} 
-        * Sessions/{target-vocal-profile-id}/real-time
-            * Sessions/{target-vocal-profile-id}/real-time/volume
-            * Sessions/{target-vocal-profile-id}/real-time/speed
-            * Sessions/{target-vocal-profile-id}/real-time/pitch
-            * Sessions/{target-vocal-profile-id}/real-time/pauses  
-        * Sessions/{target-vocal-profile-id}/upload
-            * Sessions/{target-vocal-profile-id}/upload/volume
-            * Sessions/{target-vocal-profile-id}/upload/speed
-            * Sessions/{target-vocal-profile-id}/upload/pitch
-            * Sessions/{target-vocal-profile-id}/upload/pauses
+    * {target-vocal-profile-id} 
+        * real-time
+            * volume
+            * speed
+            * pitch
+            * pauses  
+        * {target-vocal-profile-id}/upload
+            * volume
+            * speed
+            * pitch
+            * pauses
 
 #### Resource representation
+GET /users/
+{
+  "firstName": "Bob",
+  "lastName": "Spalding"
+}
+
+POST /users/
+{
+    "firstname" : "Anna",
+    "lastname" : "Egger",
+    "age" : "27",
+    "gender" : "female",
+    "ethnicity" : "Austrian",
+    "educationLevel" : "Phd",
+    "employmentStatus" : "Employed",
+    "annualIncome" : "100,000",
+    "location" : {
+        "city" : "Vienna",
+        "country" : "Austria",
+        "regionType" : "Urban"
+    },
+    "maritialStatus" : "single",
+    "heathAndDisability" : [
+        "none"
+    ]
+}
+
+
+PUT /users/
+{
+    "firstname" : "Anna",
+    "lastname" : "Egger",
+    "age" : "27",
+    "gender" : "female",
+    "ethnicity" : "Austrian",
+    "educationLevel" : "Phd",
+    "employmentStatus" : "Employed",
+    "annualIncome" : "100,000",
+    "location" : {
+        "city" : "Vienna",
+        "country" : "Austria",
+        "regionType" : "Urban"
+    },
+    "maritialStatus" : "single",
+    "heathAndDisability" : [
+        "none"
+    ]
+}
+
+POST /vocal-profiles/baseline-profiles
+{
+    "datetime" : "18/10/2026,10:30:46",
+    "rootMeanSquare" : ,
+    "soundPressureLevel" : ,
+    "energyEntropy" : "",
+    "intensityContour" : "",
+    "fundamentalFrequency" : "",
+    "fundamentalFrequencyVariability" : "",
+    "pitchRange" : "",
+    "pitchContours" : "",
+    "speechRate" : "", 
+    "articulationRate" : "",
+    "pauseDuration" : "",
+    "pauseFrequency" : "",
+    "vowelToConsonantRatio" : "",
+    "syllableDurationVariability" : ""
+}
+
+POST /vocal-profiles/target-profiles
+{
+    "datetime" : "18/10/2026,10:30:46",
+    "rootMeanSquare" : ,
+    "soundPressureLevel" : ,
+    "energyEntropy" : "",
+    "intensityContour" : "",
+    "fundamentalFrequency" : "",
+    "fundamentalFrequencyVariability" : "",
+    "pitchRange" : "",
+    "pitchContours" : "",
+    "speechRate" : "", 
+    "articulationRate" : "",
+    "pauseDuration" : "",
+    "pauseFrequency" : "",
+    "vowelToConsonantRatio" : "",
+    "syllableDurationVariability" : ""
+}
+
+GET /vocal-profiles/baseline-profiles
+{
+    "datetime" : "18/10/2026,10:30:46",
+    "rootMeanSquare" : ,
+    "soundPressureLevel" : ,
+    "energyEntropy" : "",
+    "intensityContour" : "",
+    "fundamentalFrequency" : "",
+    "fundamentalFrequencyVariability" : "",
+    "pitchRange" : "",
+    "pitchContours" : "",
+    "speechRate" : "", 
+    "articulationRate" : "",
+    "pauseDuration" : "",
+    "pauseFrequency" : "",
+    "vowelToConsonantRatio" : "",
+    "syllableDurationVariability" : ""
+}
+
+GET /vocal-profiles/target-profiles
+{
+    "datetime" : "18/10/2026,10:30:46",
+    "rootMeanSquare" : ,
+    "soundPressureLevel" : ,
+    "energyEntropy" : "",
+    "intensityContour" : "",
+    "fundamentalFrequency" : "",
+    "fundamentalFrequencyVariability" : "",
+    "pitchRange" : "",
+    "pitchContours" : "",
+    "speechRate" : "", 
+    "articulationRate" : "",
+    "pauseDuration" : "",
+    "pauseFrequency" : "",
+    "vowelToConsonantRatio" : "",
+    "syllableDurationVariability" : ""
+}
+
+GET /vocal-profiles/baseline-profiles/{baseline-profile-id}
+{
+    "datetime" : "18/10/2026,10:30:46",
+    "rootMeanSquare" : ,
+    "soundPressureLevel" : ,
+    "energyEntropy" : "",
+    "intensityContour" : "",
+    "fundamentalFrequency" : "",
+    "fundamentalFrequencyVariability" : "",
+    "pitchRange" : "",
+    "pitchContours" : "",
+    "speechRate" : "", 
+    "articulationRate" : "",
+    "pauseDuration" : "",
+    "pauseFrequency" : "",
+    "vowelToConsonantRatio" : "",
+    "syllableDurationVariability" : ""
+}
+
+
+GET /vocal-profiles/target-profiles/{target-profile-id}
+{
+    "datetime" : "18/10/2026,10:30:46",
+    "rootMeanSquare" : ,
+    "soundPressureLevel" : ,
+    "energyEntropy" : "",
+    "intensityContour" : "",
+    "fundamentalFrequency" : "",
+    "fundamentalFrequencyVariability" : "",
+    "pitchRange" : "",
+    "pitchContours" : "",
+    "speechRate" : "", 
+    "articulationRate" : "",
+    "pauseDuration" : "",
+    "pauseFrequency" : "",
+    "vowelToConsonantRatio" : "",
+    "syllableDurationVariability" : ""
+}
+
+PUT /vocal-profiles/target-profiles/{target-profile-id}
+{
+    "rootMeanSquare" : ,
+    "soundPressureLevel" : ,
+    "energyEntropy" : "",
+    "intensityContour" : "",
+    "fundamentalFrequency" : "",
+    "fundamentalFrequencyVariability" : "",
+    "pitchRange" : "",
+    "pitchContours" : "",
+    "speechRate" : "", 
+    "articulationRate" : "",
+    "pauseDuration" : "",
+    "pauseFrequency" : "",
+    "vowelToConsonantRatio" : "",
+    "syllableDurationVariability" : ""
+}
+
+DELETE /vocal-profiles/target-profiles/{target-profile-id}
+DELETE /vocal-profiles/baseline-profiles/{baseline-profile-id}
+
+POST /sessions/real-time
+POST /sessions/upload/
+
+GET /analytics/
+{
+    "rootMeanSquare" : ,
+    "soundPressureLevel" : ,
+    "energyEntropy" : "",
+    "intensityContour" : "",
+    "fundamentalFrequency" : "",
+    "fundamentalFrequencyVariability" : "",
+    "pitchRange" : "",
+    "pitchContours" : "",
+    "speechRate" : "", 
+    "articulationRate" : "",
+    "pauseDuration" : "",
+    "pauseFrequency" : "",
+    "vowelToConsonantRatio" : "",
+    "syllableDurationVariability" : ""
+}
+
+GET /analytics/{session-id}
+{
+    "rootMeanSquare" : ,
+    "soundPressureLevel" : ,
+    "energyEntropy" : "",
+    "intensityContour" : "",
+    "fundamentalFrequency" : "",
+    "fundamentalFrequencyVariability" : "",
+    "pitchRange" : "",
+    "pitchContours" : "",
+    "speechRate" : "", 
+    "articulationRate" : "",
+    "pauseDuration" : "",
+    "pauseFrequency" : "",
+    "vowelToConsonantRatio" : "",
+    "syllableDurationVariability" : ""
+}
 
 #### HTTP methods for operations on resource
 POST /users/
-GET /users/{user-id}
-UPDATE /users/{user-id}
-DELETE /users/{user-id}
+GET /users/
+PUT /users/
+DELETE /users/
 
 POST /vocal-profiles/baseline-profiles
 POST /vocal-profiles/target-profiles
@@ -222,7 +441,7 @@ GET /vocal-profiles/baseline-profiles
 GET /vocal-profiles/baseline-profiles/{baseline-profile-id}
 GET /vocal-profiles/target-profiles
 GET /vocal-profiles/target-profiles/{target-profile-id}
-UPDATE /vocal-profiles/target-profiles/{target-profile-id}
+PUT /vocal-profiles/target-profiles/{target-profile-id}
 DELETE /vocal-profiles/target-profiles/{target-profile-id}
 DELETE /vocal-profiles/baseline-profiles/{baseline-profile-id}
 
@@ -230,9 +449,8 @@ POST /sessions/real-time
 POST /sessions/upload/
 GET /sessions/{session-id}
 
-POST /feedback/{user-id}/{session-id}
-GET /feedback/{user-id}
-GET /feedback/{user-id}/{session-id}
+GET /analytics/
+GET /analytics/{session-id}
 
 ### Websocket
 
