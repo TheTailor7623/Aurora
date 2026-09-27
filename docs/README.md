@@ -484,6 +484,32 @@ GET /analytics/{session-id}
 
 ## Private
 ### gRPC
+* Communication pattern
+Client streaming - client sends multiple audio chunks over multiple requests to C++ processing server and the server returns one response at the end with the analysis data
 
-# Software architecture diagram
+* Services
+Springboot webapp
+|
+gRPC Apis
+|
+C++ Processing service
+- Volume processing service
+- Pitch processing service
+- Pauses processing service
+- Speed processing service
 
+# Functional architecture diagram
+* Lambda microservices architecture
+
+1. User registration
+2. User login
+3. User accessing a dashboard
+4. User creating a target vocal profile
+5. User starting a session
+6. User uploading a voice recording
+8. User getting feedback (delayed and real-time)
+9. User extracting speech features — voice, speed, pitch and pause pattern features
+10. User establishing a their baseline
+
+*User registration or login*
+![User registration or login]()
